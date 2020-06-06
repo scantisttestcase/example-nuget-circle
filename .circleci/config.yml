@@ -1,18 +1,16 @@
-version: 2
+version: 2.1
 
 orbs:
   windows: circleci/windows@2.2.0
 
 jobs:
-  build:
-    working_directory: ~/example-nuget-circle
-#     docker:
-#       - image: jetcipher/circleci-dotnet-core:3.0
+  test:
+    description: Setup and run application tests
+    executor:
+      name: windows/default
     steps:
       - checkout
+
       - run:
-          name: Build
-          command: |
-            ls
-            dotnet build 
-          
+          name: "Install project dependencies"
+          command: dotnet build
