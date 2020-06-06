@@ -1,13 +1,11 @@
 version: 2
-
-orbs:
-  windows: circleci/windows@2.2.0
-
 jobs:
-
+  build:
+    docker:
+      - image: jetcipher/circleci-dotnet-core:3.0
     steps:
-      - checkout            
+      - checkout
       - run:
-          name: install-dependencies
-          command: |
-            dotnet build
+          name: Build
+          command: dotnet build 
+          working_directory: ~/example-nuget-circle
