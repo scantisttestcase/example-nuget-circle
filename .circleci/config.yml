@@ -1,9 +1,13 @@
 version: 2
+
+orbs:
+  windows: circleci/windows@2.2.0
+
 jobs:
   build:
     working_directory: ~/example-nuget-circle
-    docker:
-      - image: jetcipher/circleci-dotnet-core:3.0
+#     docker:
+#       - image: jetcipher/circleci-dotnet-core:3.0
     steps:
       - checkout
       - run:
