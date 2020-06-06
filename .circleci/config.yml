@@ -1,11 +1,14 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/example-nuget-circle
     docker:
       - image: jetcipher/circleci-dotnet-core:3.0
     steps:
       - checkout
       - run:
           name: Build
-          command: dotnet build 
-          working_directory: ~/example-nuget-circle
+          command: |
+            ls
+            dotnet build 
+          
