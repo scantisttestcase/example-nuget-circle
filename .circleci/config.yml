@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: microsoft-dotnet-core
+
+    steps:
+      - checkout            
+      - run:
+          name: install-dependencies
+          command: |
+            dotnet build
