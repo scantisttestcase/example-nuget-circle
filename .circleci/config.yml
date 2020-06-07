@@ -1,16 +1,12 @@
-executors:
-  dotnet2_2:
-    docker:
-      - image: 'mcr.microsoft.com/dotnet/core/sdk:2.2'
-    working_directory: ~/example-nuget-circle
-    environment:
-      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-      NUGET_XMLDOC_MODE: skip
+version: 2
 jobs:
   build:
-    executor: dotnet2_2
+    docker:
+      - image: mcr.microsoft.com/dotnet/framework/sdk:4.8
+
     steps:
-      - run: ls
-      - run: dotnet build VulnerableDotNet.sln
-       
-version: 2.1
+      - checkout            
+      - run:
+          name: install dep
+          command: |
+            dotnet restore
