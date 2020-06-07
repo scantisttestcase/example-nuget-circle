@@ -10,7 +10,7 @@ jobs:
   build:
     executor: dotnet2_2
     steps:
-      - run: |
+      - command: |
        ls
        dotnet build VulnerableDotNet.sln
        
