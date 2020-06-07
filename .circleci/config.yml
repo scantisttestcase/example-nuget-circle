@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: microsoft-dotnet-framework-sdk
+      - image: microsoft/dotnet-framework:4.7
 
     steps:
       - checkout            
