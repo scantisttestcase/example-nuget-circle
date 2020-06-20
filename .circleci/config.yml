@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: microsoft/dotnet-framework
+      - image: circleci/windows@1.0.0
     steps:
       - checkout            
       - run:
