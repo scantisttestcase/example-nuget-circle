@@ -9,4 +9,4 @@ jobs:
       - run:
           name: install dep
           command: |
-            dotnet restore
+            dotnet build
