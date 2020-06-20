@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: mcr.microsoft.com/dotnet/framework/aspnet:4.8
+      - image: mcr.microsoft.com/dotnet/framework/aspnet
 
     steps:
       - checkout            
